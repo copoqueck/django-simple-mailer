@@ -1,6 +1,6 @@
 [project]
 name = "django-simple-mailer"
-version = "0.1.0"
+version = "1.0.0"
 description = "A simple Django app for sending template-driven emails."
 readme = "README.md"
 authors = [
