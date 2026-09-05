@@ -1,0 +1,27 @@
+[project]
+name = "django-simple-mailer"
+version = "0.1.0"
+description = "A simple Django app for sending template-driven emails."
+readme = "README.md"
+authors = [
+    { name = "David Villalba", email = "davidvillalbamartinez@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django>=4.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-django>=4.8",
+    "pytest-xdist>=3.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+pythonpath = ["."]
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
