@@ -1,0 +1,45 @@
+exclude: |
+  (?x)^(
+      .*migrations/.*|
+      .venv/.*
+  )$
+
+fail_fast: true
+
+repos:
+
+  # Basic pre-commit hooks for common file validation and formatting
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+        args: [ --allow-multiple-documents ]
+      - id: check-json
+        # Validates JSON file syntax
+      - id: check-toml
+        # Validates TOML file syntax
+      - id: check-merge-conflict
+        # Prevents merge conflict markers from being committed
+      - id: check-added-large-files
+        # Warns about large files being added
+      - id: detect-private-key
+        # Detects private keys to prevent accidental commits
+      - id: end-of-file-fixer
+        # Ensures files end with a newline
+      - id: trailing-whitespace
+        # Removes trailing whitespace
+      - id: mixed-line-ending
+        # Ensures consistent line endings
+
+  # Python code quality: linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.9
+    hooks:
+      # Run the linter.
+      - id: ruff
+        types_or: [ python, pyi ]
+        args: [ --fix, --show-fixes ]
+      # Run the formatter.
+      - id: ruff-format
+        types_or: [ python, pyi ]
+        args: [ --diff ]
