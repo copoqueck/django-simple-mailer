@@ -1,11 +1,12 @@
 [project]
 name = "django-simple-mailer"
-version = "1.0.0"
+version = "1.0.1"
 description = "A simple Django app for sending template-driven emails."
 readme = "README.md"
 authors = [
     { name = "David Villalba", email = "davidvillalbamartinez@gmail.com" }
 ]
+keywords = ["django", "email", "mailer", "smtp", "templates", "logging", "transactional-email", "django-email"]
 requires-python = ">=3.12"
 dependencies = [
     "django>=4.2",
@@ -25,3 +26,8 @@ pythonpath = ["."]
 [build-system]
 requires = ["uv_build>=0.12.9,<0.13.0"]
 build-backend = "uv_build"
+
+[project.urls]
+Homepage = "https://github.com/copoqueck/django-simple-mailer"
+Repository = "https://github.com/copoqueck/django-simple-mailer"
+Documentation = "https://github.com/copoqueck/django-simple-mailer#django-simple-mailer"
